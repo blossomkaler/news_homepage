@@ -1,0 +1,276 @@
+ @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap');
+
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+  }
+
+.container{
+    display:grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: 0fr 0.7fr 0.5fr 0.4fr ;
+    grid-gap: 2rem;
+    grid-template-areas: 
+    'navbar navbar navbar'
+    'image image new'
+    '. . new'
+    '. . .';
+    padding: 5rem;
+    padding-top: 1rem;
+}
+.box{
+    padding: 1.5rem;
+    background-color: aliceblue;
+}
+
+#navbar{
+    grid-area: navbar;
+    display: grid;
+    grid-template-columns: auto auto;
+    height: 60px;
+    padding: 0 ;
+}
+
+#navbar .links a{
+    color: black;
+    padding:0rem 1rem;
+    font-size: 17px;
+    line-height: 60px;  
+}
+
+#navbar .links{
+    text-align: right;
+}
+
+#navbar .links a:hover{
+   color:hsl(5, 85%, 63%);
+}
+#navbar .logo{
+    height:60px;
+}
+#navbar .logo img{
+    display:block;
+    height:60px;
+}
+a{
+    text-decoration: none;
+}
+
+#image{
+    grid-area: image;
+    background: url(/assets/images/image-web-3-desktop.jpg) no-repeat center ;
+    background-size: cover;
+}
+
+.heading{
+    padding-bottom: 0.6rem;
+}
+
+#new{
+    grid-area: new;
+    background-color:hsl(240, 100%, 5%);
+    padding: 2rem;
+}
+#new h1 {
+    padding-bottom: 1.5rem;
+    color: hsl(35, 77%, 62%);
+}
+
+#new .heading a{
+    color:white ;
+    font-weight: 700;
+    font-size: 30px;
+    letter-spacing: 1.5px;
+}
+
+#new .heading a:hover{
+    color:hsl(35, 77%, 62%) ;
+}
+
+#new p{
+    color:hsl(240, 11%, 81%)  ;
+}
+
+.web3{
+    font-weight: 800;
+    font-size: 65px;
+    padding: 0;
+    line-height: 4rem;
+}
+
+.btn{
+    background-color: hsl(5, 85%, 63%);
+    padding: 1rem 4rem;
+    color: white;
+    margin-top: 2rem;
+    font-size: 13px;
+    letter-spacing: 3px;
+}
+.btn:hover{
+    background-color: black;
+}
+
+.read-more{
+    padding-left:0rem;
+    padding-top: 0;
+}
+.read-more .content{
+ margin-bottom: 3rem;
+}
+.line{
+    margin: 2rem 0rem;
+}
+
+.content{
+    color:hsl(240, 1%, 49%) ;
+    line-height: 1.5rem;
+    font-size: 18px;
+}
+.number{
+    color:hsl(240, 11%, 81%);
+}
+
+.retro, .laptop, .gaming{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-gap: 1rem;
+    padding-left: 0;
+}
+
+.retro a, .laptop a, .gaming a{
+    color: black;
+    padding: 5rem 0rem;
+}
+.retro a:hover, .laptop a:hover , .gaming a:hover {
+    color:hsl(5, 85%, 63%);
+}
+.retro-img{
+    background: url(/assets/images/image-retro-pcs.jpg) no-repeat center;
+    background-size: cover;
+}
+
+.laptop-img{
+    background: url(/assets/images/image-top-laptops.jpg) no-repeat center;
+    background-size: cover;
+}
+
+.gaming-img{
+    background: url(/assets/images/image-gaming-growth.jpg) no-repeat center;
+    background-size: cover;
+}
+
+
+/*``````````````````````````````````````````RESPONSIVE``````````````````````````````````````````````````*/
+@media only screen and (max-width: 376px) 
+{
+.container{
+    grid-template-columns: 1fr;
+  grid-template-rows: repeat(8,auto); 
+  grid-gap: 1.4rem; 
+  padding: 1rem;
+    grid-template-areas: 
+    'navbar'
+    'image'
+    'web3'
+    'read-more'
+    'new'
+    'retro'
+    'laptop'
+    'gaming';
+}
+
+.retro{
+    grid-area: retro;
+}
+.laptop{
+    grid-area: laptop;
+}
+.gaming{
+    grid-area: gaming;
+}
+.read-more{
+    grid-area: read-more;
+    padding: 0 0 2rem 0;
+}
+#navbar .links{
+    position:fixed;
+    width: 250px;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding-top: 150px;
+    padding-left: 10px;
+    background-color: rgb(230, 222, 222);
+    text-align: left;
+}
+
+#navbar .links a{
+    font-size: 22px;
+    line-height: 3rem;
+}
+
+
+
+.web3{
+    grid-area:web3;
+    font-weight: 800;
+    font-size: 45px;
+    padding: 0;
+    line-height: 3rem;
+}
+
+#image{
+    background: url(/assets/images/image-web-3-mobile.jpg) no-repeat center ;
+    background-size: cover;
+    height: 300px;
+}
+
+.read-more .content{
+    margin-bottom: 2rem;
+    font-size :15px;
+}
+
+.btn{
+    padding: 1rem 2rem;
+    margin-top: 0.5rem;
+    font-size: 13px;
+    letter-spacing: 3px;
+}
+
+#new{
+    padding: 1rem;
+}
+
+#new .heading a{
+    color:white ;
+    font-weight: 700;
+    font-size: 20px;
+    
+}
+
+#new p{
+    font-size: 14px;
+    color:hsl(240, 11%, 81%)  ;
+}
+
+.line{
+    margin: 1.5rem 0rem;
+}
+.retro, .laptop, .gaming{
+    padding: 0;
+}
+
+.retro a, .laptop a, .gaming a{
+    font-weight: 800;
+    font-size: 20px;
+}
+
+.retro .content, .laptop .content, .gaming .content{
+    font-size: 13px;
+}
+}
+
