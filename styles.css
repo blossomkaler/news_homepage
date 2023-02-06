@@ -10,7 +10,7 @@
 .container{
     display:grid;
     grid-template-columns: repeat(3,1fr);
-    grid-template-rows: 0fr 0.7fr 0.5fr 0.4fr ;
+    grid-template-rows: 0fr 0.7fr 0.5fr 0.5fr ;
     grid-gap: 2rem;
     grid-template-areas: 
     'navbar navbar navbar'
@@ -22,13 +22,12 @@
 }
 .box{
     padding: 1.5rem;
-    background-color: aliceblue;
 }
 
 #navbar{
     grid-area: navbar;
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: auto auto 1px;
     height: 60px;
     padding: 0 ;
 }
@@ -53,6 +52,11 @@
 #navbar .logo img{
     display:block;
     height:60px;
+}
+#navbar .menu-bar img{
+    display:none;
+    float: right;
+    padding-top: 1rem;
 }
 a{
     text-decoration: none;
@@ -194,25 +198,22 @@ a{
     grid-area: read-more;
     padding: 0 0 2rem 0;
 }
+
 #navbar .links{
-    position:fixed;
-    width: 250px;
-    top: 0;
-    right: 0;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    padding-top: 150px;
-    padding-left: 10px;
-    background-color: rgb(230, 222, 222);
-    text-align: left;
+    display: none;
+}
+#navbar .logo img{
+    height:50px;
 }
 
 #navbar .links a{
     font-size: 22px;
     line-height: 3rem;
 }
-
+#navbar .menu-bar img{
+    display:block;
+    width:65px;
+}
 
 
 .web3{
