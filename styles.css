@@ -6,19 +6,32 @@
     box-sizing: border-box;
     font-family: "Inter", sans-serif;
   }
+  
+a{
+    text-decoration: none;
+}
+.heading{
+    padding-bottom: 0.6rem;
+}
+.content{
+    color:hsl(240, 1%, 49%) ;
+    line-height: 1.5rem;
+    font-size: 16px;
+}
 
 .container{
     display:grid;
     grid-template-columns: repeat(3,1fr);
-    grid-template-rows: 0fr 0.7fr 0.5fr 0.5fr ;
-    grid-gap: 2rem;
+    grid-template-rows: repeat(4,auto) ;
+    grid-gap: 1rem;
     grid-template-areas: 
     'navbar navbar navbar'
     'image image new'
     '. . new'
     '. . .';
-    padding: 5rem;
+    padding: 2rem 5rem;
     padding-top: 1rem;
+    height: 100vh;
 }
 .box{
     padding: 1.5rem;
@@ -28,7 +41,7 @@
     grid-area: navbar;
     display: grid;
     grid-template-columns: auto auto 1px;
-    height: 60px;
+    height: 50px;
     padding: 0 ;
 }
 
@@ -36,7 +49,7 @@
     color: black;
     padding:0rem 1rem;
     font-size: 17px;
-    line-height: 60px;  
+    line-height: 50px;  
 }
 
 #navbar .links{
@@ -47,31 +60,24 @@
    color:hsl(5, 85%, 63%);
 }
 #navbar .logo{
-    height:60px;
+    height:50px;
 }
 #navbar .logo img{
     display:block;
-    height:60px;
+    height:50px;
 }
 #navbar .menu-bar img{
     display:none;
     float: right;
     padding-top: 1rem;
 }
-a{
-    text-decoration: none;
-}
 
 #image{
     grid-area: image;
     background: url(/assets/images/image-web-3-desktop.jpg) no-repeat center ;
     background-size: cover;
+    height: 240px;
 }
-
-.heading{
-    padding-bottom: 0.6rem;
-}
-
 #new{
     grid-area: new;
     background-color:hsl(240, 100%, 5%);
@@ -85,7 +91,7 @@ a{
 #new .heading a{
     color:white ;
     font-weight: 700;
-    font-size: 30px;
+    font-size: 22px;
     letter-spacing: 1.5px;
 }
 
@@ -97,10 +103,11 @@ a{
     color:hsl(240, 11%, 81%)  ;
 }
 
-.web3{
+.web3 {
     font-weight: 800;
     font-size: 65px;
     padding: 0;
+    padding-right: 1rem;
     line-height: 4rem;
 }
 
@@ -108,7 +115,7 @@ a{
     background-color: hsl(5, 85%, 63%);
     padding: 1rem 4rem;
     color: white;
-    margin-top: 2rem;
+    margin-top: 1rem;
     font-size: 13px;
     letter-spacing: 3px;
 }
@@ -124,13 +131,7 @@ a{
  margin-bottom: 3rem;
 }
 .line{
-    margin: 2rem 0rem;
-}
-
-.content{
-    color:hsl(240, 1%, 49%) ;
-    line-height: 1.5rem;
-    font-size: 18px;
+    margin: 1rem 0rem;
 }
 .number{
     color:hsl(240, 11%, 81%);
@@ -141,6 +142,7 @@ a{
     grid-template-columns: 1fr 2fr;
     grid-gap: 1rem;
     padding-left: 0;
+    padding-top: 0;
 }
 
 .retro a, .laptop a, .gaming a{
@@ -165,15 +167,68 @@ a{
     background-size: cover;
 }
 
-
 /*``````````````````````````````````````````RESPONSIVE``````````````````````````````````````````````````*/
-@media only screen and (max-width: 376px) 
+@media only screen and (min-width:615px) and (max-width: 1186px)
+{
+.container{
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(5,auto); 
+    grid-gap: 1.4rem; 
+    padding: 1rem 2rem;
+    grid-template-areas: 
+    'navbar navbar'
+    'image new'
+    'web3 new'
+    'read-more retro'
+    'laptop gaming';
+}
+.content{
+    font-size:15px
+}
+
+#image{
+    background: url(/assets/images/image-web-3-mobile.jpg) no-repeat center ;
+    background-size: cover;
+    height: 300px;
+}
+.line{
+    margin: 1rem 0rem;
+}
+.retro{
+    grid-area: retro;
+    padding: 0;
+}
+.laptop{
+    grid-area: laptop;
+    padding: 0;
+}
+.gaming{
+    grid-area: gaming;
+    padding: 0;
+}
+.read-more{
+    grid-area: read-more;
+    padding: 0 0 2rem 0;
+}
+
+.web3{
+    grid-area:web3;
+    font-size: 50px;
+}
+
+}
+
+#navbar .menu-bar img{
+    width:65px;
+}
+/*``````````````````````````````````````````RESPONSIVE``````````````````````````````````````````````````*/
+@media only screen and (max-width: 615px) 
 {
 .container{
     grid-template-columns: 1fr;
-  grid-template-rows: repeat(8,auto); 
-  grid-gap: 1.4rem; 
-  padding: 1rem;
+    grid-template-rows: repeat(8,auto); 
+    grid-gap: 1.4rem; 
+    padding: 1rem;
     grid-template-areas: 
     'navbar'
     'image'
@@ -184,18 +239,10 @@ a{
     'laptop'
     'gaming';
 }
-
-.retro{
-    grid-area: retro;
-}
-.laptop{
-    grid-area: laptop;
-}
-.gaming{
-    grid-area: gaming;
+.content{
+    font-size:25px
 }
 .read-more{
-    grid-area: read-more;
     padding: 0 0 2rem 0;
 }
 
@@ -217,7 +264,6 @@ a{
 
 
 .web3{
-    grid-area:web3;
     font-weight: 800;
     font-size: 45px;
     padding: 0;
@@ -249,8 +295,7 @@ a{
 #new .heading a{
     color:white ;
     font-weight: 700;
-    font-size: 20px;
-    
+    font-size: 20px;   
 }
 
 #new p{
@@ -271,7 +316,10 @@ a{
 }
 
 .retro .content, .laptop .content, .gaming .content{
-    font-size: 13px;
+    font-size: 20px;
 }
 }
+
+
+
 
